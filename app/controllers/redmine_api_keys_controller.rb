@@ -6,7 +6,7 @@ class RedmineApiKeysController < ApplicationController
 
   def index
     @filter = params[:filter].to_s
-    @filter = 'all' unless %w[all with_key without_key].include?(@filter)
+    @filter = 'with_key' unless %w[all with_key without_key].include?(@filter)
     users = User.where(type: 'User').includes(:api_token).order(:login, :id)
     # Pagination avoids loading all accounts on large installations.
     if @filter == 'with_key'
