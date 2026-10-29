@@ -1,0 +1,17 @@
+.api-key-management table.list td {
+  padding-top: 2px;
+  padding-bottom: 2px;
+}
+
+.api-key-management form.button_to {
+  display: inline-block;
+  margin: 0;
+  vertical-align: middle;
+}
+
+.api-key-management input[type="submit"] {
+  height: auto;
+  min-height: 0;
+  padding: 1px 5px;
+  line-height: 1.1;
+}

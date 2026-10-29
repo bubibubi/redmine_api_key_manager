@@ -1,4 +1,5 @@
 <% html_title l(:label_api_key_management) %>
+<%= stylesheet_link_tag 'api_keys', plugin: 'redmine_api_key_manager' %>
 <div class="contextual"></div>
 <h2><%= l(:label_api_key_management) %></h2>
 <p><%= l(:text_api_key_management_info) %></p>
@@ -7,7 +8,7 @@
   <%= link_to l(:label_with_api_key), redmine_api_keys_path(filter: 'with_key') %> |
   <%= link_to l(:label_without_api_key), redmine_api_keys_path(filter: 'without_key') %>
 </p>
-<div class="autoscroll">
+<div class="autoscroll api-key-management">
 <table class="list users">
 <thead><tr>
   <th>ID</th><th><%= l(:field_login) %></th><th><%= l(:field_status) %></th>
@@ -27,14 +28,10 @@
     <td>
       <% if token %>
         <%= button_to l(:button_revoke_api_key), revoke_redmine_api_key_path(user),
-          method: :post, data: {confirm: l(:text_confirm_revoke_api_key)},
-          form: {style: 'display: inline-block; margin: 0;'},
-          style: 'padding: 2px 6px; line-height: 1.2;' %>
+          method: :post, data: {confirm: l(:text_confirm_revoke_api_key)} %>
       <% end %>
       <%= button_to l(:button_rotate_api_key), rotate_redmine_api_key_path(user),
-        method: :post, data: {confirm: l(:text_confirm_rotate_api_key)},
-        form: {style: 'display: inline-block; margin: 0;'},
-        style: 'padding: 2px 6px; line-height: 1.2;' %>
+        method: :post, data: {confirm: l(:text_confirm_rotate_api_key)} %>
     </td>
   </tr>
 <% end %>
