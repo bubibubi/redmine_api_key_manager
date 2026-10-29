@@ -11,3 +11,5 @@ en:
   notice_api_key_revoked: "API key revoked."
   notice_api_key_rotated: "API key regenerated. The owner can retrieve it from their account page."
   notice_api_key_absent: "This user has no API key."
+  label_created_on: "Created on"
+  label_action: "Action"

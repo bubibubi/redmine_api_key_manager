@@ -1,5 +1,7 @@
 it:
   label_api_key_management: "Gestione API Key REST"
+  label_created_on: "Data creazione"
+  label_action: "Azione"
   text_api_key_management_info: "Pagina riservata agli amministratori. Sono visualizzati solo i primi 3 caratteri delle chiavi. Revoca e rotazione interrompono le integrazioni che usano la chiave precedente. La rotazione non mostra il segreto generato."
   label_with_api_key: "Con API Key"
   label_without_api_key: "Senza API Key"
