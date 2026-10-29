@@ -1,0 +1,13 @@
+en:
+  label_api_key_management: "REST API Key Management"
+  text_api_key_management_info: "Administrators only. Only the first 3 characters of each key are displayed. Revocation and rotation break integrations using the old key. The new secret is never displayed here."
+  label_with_api_key: "With API Key"
+  label_without_api_key: "Without API Key"
+  label_no_api_key: "Absent"
+  button_revoke_api_key: "Revoke"
+  button_rotate_api_key: "Regenerate"
+  text_confirm_revoke_api_key: "Revoke this API key? Existing integrations will stop working."
+  text_confirm_rotate_api_key: "Regenerate this API key? The old key will be invalidated, and the new one will not be shown here."
+  notice_api_key_revoked: "API key revoked."
+  notice_api_key_rotated: "API key regenerated. The owner can retrieve it from their account page."
+  notice_api_key_absent: "This user has no API key."

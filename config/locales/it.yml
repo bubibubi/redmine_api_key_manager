@@ -1,0 +1,13 @@
+it:
+  label_api_key_management: "Gestione API Key REST"
+  text_api_key_management_info: "Pagina riservata agli amministratori. Sono visualizzati solo i primi 3 caratteri delle chiavi. Revoca e rotazione interrompono le integrazioni che usano la chiave precedente. La rotazione non mostra il segreto generato."
+  label_with_api_key: "Con API Key"
+  label_without_api_key: "Senza API Key"
+  label_no_api_key: "Assente"
+  button_revoke_api_key: "Revoca"
+  button_rotate_api_key: "Rigenera"
+  text_confirm_revoke_api_key: "Revocare questa API Key? Le integrazioni attuali smetteranno di funzionare."
+  text_confirm_rotate_api_key: "Rigenerare questa API Key? Quella attuale verrà invalidata e la nuova non sarà mostrata qui."
+  notice_api_key_revoked: "API Key revocata."
+  notice_api_key_rotated: "API Key rigenerata. Il proprietario può recuperarla dalla propria pagina account."
+  notice_api_key_absent: "L'utente non ha un'API Key."

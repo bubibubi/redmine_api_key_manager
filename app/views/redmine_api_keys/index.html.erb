@@ -1,0 +1,39 @@
+<% html_title l(:label_api_key_management) %>
+<div class="contextual"></div>
+<h2><%= l(:label_api_key_management) %></h2>
+<p><%= l(:text_api_key_management_info) %></p>
+<p>
+  <%= link_to l(:label_all), redmine_api_keys_path(filter: 'all') %> |
+  <%= link_to l(:label_with_api_key), redmine_api_keys_path(filter: 'with_key') %> |
+  <%= link_to l(:label_without_api_key), redmine_api_keys_path(filter: 'without_key') %>
+</p>
+<div class="autoscroll">
+<table class="list users">
+<thead><tr>
+  <th>ID</th><th><%= l(:field_login) %></th><th><%= l(:field_status) %></th>
+  <th><%= l(:field_admin) %></th><th>API Key</th>
+  <th><%= l(:label_created_on) %></th><th><%= l(:label_action) %></th>
+</tr></thead>
+<tbody>
+<% @users.each do |user| %>
+  <% token = user.api_token %>
+  <tr class="<%= cycle('odd', 'even') %>">
+    <td><%= user.id %></td>
+    <td><%= link_to user.login, edit_user_path(user) %></td>
+    <td><%= user.status %></td>
+    <td><%= user.admin? ? l(:general_text_Yes) : l(:general_text_No) %></td>
+    <td><%= token ? "#{token.value.to_s.first(3)}***" : l(:label_no_api_key) %></td>
+    <td><%= format_time(token.created_on) if token %></td>
+    <td>
+      <% if token %>
+        <%= button_to l(:button_revoke_api_key), revoke_redmine_api_key_path(user),
+              method: :post, data: {confirm: l(:text_confirm_revoke_api_key)} %>
+      <% end %>
+      <%= button_to l(:button_rotate_api_key), rotate_redmine_api_key_path(user),
+            method: :post, data: {confirm: l(:text_confirm_rotate_api_key)} %>
+    </td>
+  </tr>
+<% end %>
+</tbody></table>
+</div>
+<span class="pagination"><%= pagination_links_full @user_pages, @user_count %></span>
